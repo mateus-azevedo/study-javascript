@@ -42,5 +42,22 @@
 
 <script>
   // Seu JavaScript vai aqui
+  var numeroAleatorio = Math.floor(Math.random() * 100) + 1; // atribuido um numero aleatorio entre 1 e 100.
+
+  // Estas tres variaveis foram criadas para guardar uma referencia para os paragrafos resultantes em nosso
+  // HTML, e sao usadas para inserir valores nos paragrafos no codigo.
+  var palpites = document.querySelector('.palpites');
+  var ultimoResultado = document.querySelector('.ultimoResultado');
+  var baixoOuAlto = document.querySelector('.baixoOuAlto');
+
+  // Estas duas variaveis armazenam referencias para o campo de texto e o botao de envio e sao usados para 
+  // controlar o envio do palpite.
+  var envioPalpite = document.querySelector('.envioPalpite');
+  var campoPalpite = document.querySelector('.campoPalpite');
+
+  // Nestas duas variaveis: uma e usada para armazenar a contagem dos palpites do usuario, e a outra e uma
+  // referencia para o botao reset
+  var contagemPalpites = 1;
+  var botaoReinicio;
 </script>
 </html>
