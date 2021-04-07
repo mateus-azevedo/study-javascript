@@ -1,20 +1,31 @@
 const select = document.querySelector('select');
-select.onchange = createCalendar;
-// select.addEventListener('change', createCalendar);
+const list = document.querySelector('ul');
+const h1 = document.querySelector('h1');
 
-function createCalendar() {
+select.onchange = function() {
   let choice = select.value;
+  let selectOption = select.innerText;
   let days;
-
-  if (choice === 'none') {
+  console.log(selectOption);
+  if (choice === 'Aprendizados Ativo: um Calendário Simples') {
     days = 0;
-  } else if (choice === 'february') {
+  } else if (choice === 'Fevereiro') {
     days = 28;
-  } else if (choice === 'april' || choice === 'june' || choice === 'september' || choice === 'november') {
+  } else if (choice === 'Abril' || choice === 'Junho' || choice === 'Setembro' || choice === 'Novembro') {
     days = 30;
   } else {
     days = 31;
   }
 
-  console.log(`${choice} ${days}`);
+  createCalendar(days, choice);
+};
+
+function createCalendar(days, choice) {
+  list.innerHTML = '';
+  h1.textContent = 'Mês de ' + choice;
+  for (let i = 1; i <= days; i++) {
+    let listItem = document.createElement('li');
+    listItem.textContent = i;
+    list.appendChild(listItem);
+  }
 }
